@@ -44,7 +44,8 @@ RUN chown -R odoo /var/extra-addons && pip install --upgrade pip setuptools open
     && pip install -r /var/extra-addons/partner-contact/requirements.txt \
     && pip install -r /var/extra-addons/server-tools/requirements.txt \
     && pip install -r /var/extra-addons/stock-logistics-barcode/requirements.txt \
-    && pip install git+https://github.com/aeroo/aeroolib.git
+    && pip install git+https://github.com/aeroo/aeroolib.git \
+    && chown odoo /usr/local/lib/python2.7/dist-packages/pyafipws/
 
 COPY ./conf/openerp-server.conf /etc/odoo/
 
