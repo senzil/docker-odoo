@@ -22,8 +22,9 @@ ENV LANGUAGE es_AR:es:en_US:en
 ENV LC_ALL es_AR.UTF-8
 
 RUN mkdir -p /var/extra-addons \
-    && git clone  -b 9.0 https://github.com/OCA/account-closing /var/extra-addons/account-closing \
-    && git clone -b 9.0 https://github.com/ingadhoc/account-financial-tools /var/extra-addons/account-financial-tools \
+    && git clone -b 9.0 https://github.com/OCA/account-closing /var/extra-addons/account-closing \
+    && git clone -b 9.0 https://github.com/OCA/account-financial-tools /var/extra-addons/OCA/account-financial-tools \
+    && git clone -b 9.0 https://github.com/ingadhoc/account-financial-tools /var/extra-addons/ingadhoc/account-financial-tools \
     && git clone -b 9.0 https://github.com/ingadhoc/account-payment /var/extra-addons/account-payment \
     && git clone -b 9.0 https://github.com/ingadhoc/aeroo_reports /var/extra-addons/aeroo_reports \
     && git clone -b 9.0 https://github.com/OCA/bank-payment /var/extra-addons/bank-payment \
@@ -46,6 +47,7 @@ RUN mkdir -p /var/extra-addons \
 
 RUN chown -R odoo /var/extra-addons \
     && pip install --upgrade pip setuptools openupgradelib \
+    && pip install -r /var/extra-addons/OCA/account-financial-tools/requirements.txt \
     && pip install -r /var/extra-addons/odoo-argentina/requirements.txt \
     && pip install -r /var/extra-addons/partner-contact/requirements.txt \
     && pip install -r /var/extra-addons/reporting-engine/requirements.txt \
