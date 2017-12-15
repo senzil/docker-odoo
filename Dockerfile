@@ -5,18 +5,21 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends\
-    git python-dev \
+    git \
+    python-dev \
     build-essential \
     libssl-dev \
     libffi-dev \
-    python-httplib2
+    python-httplib2 \
+    python-m2crypto \
+    locales
 
-#RUN locale-gen en_US.UTF-8 && update-locale
-#RUN locale-gen es_AR.UTF-8 && update-locale
-#RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
-#ENV LANG es_AR.UTF-8
-#ENV LANGUAGE es_AR:es:en_US:en
-#ENV LC_ALL es_AR.UTF-8
+RUN locale-gen en_US.UTF-8 && update-locale
+RUN locale-gen es_AR.UTF-8 && update-locale
+RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+ENV LANG es_AR.UTF-8
+ENV LANGUAGE es_AR:es:en_US:en
+ENV LC_ALL es_AR.UTF-8
 
 RUN mkdir -p /var/extra-addons \
     && git clone  -b 9.0 https://github.com/OCA/account-closing /var/extra-addons/account-closing \
