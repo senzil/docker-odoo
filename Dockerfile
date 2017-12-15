@@ -33,6 +33,7 @@ RUN mkdir -p /var/extra-addons \
     && git clone -b 9.0 https://github.com/ingadhoc/odoo-argentina /var/extra-addons/odoo-argentina \
     && git clone -b 9.0 https://github.com/OCA/partner-contact /var/extra-addons/partner-contact \
     && git clone -b 9.0 https://github.com/OCA/product-attribute /var/extra-addons/product-attribute \
+    && git clone -b 9.0 https://github.com/OCA/reporting-engine /var/extra-addons/reporting-engine
     && git clone -b 9.0 https://github.com/OCA/sale-workflow /var/extra-addons/sale-workflow \
     && git clone -b 9.0 https://github.com/OCA/server-tools /var/extra-addons/server-tools \
     && git clone -b 9.0 https://github.com/OCA/stock-logistics-barcode /var/extra-addons/stock-logistics-barcode \
@@ -47,6 +48,7 @@ RUN chown -R odoo /var/extra-addons \
     && pip install --upgrade pip setuptools openupgradelib \
     && pip install -r /var/extra-addons/odoo-argentina/requirements.txt \
     && pip install -r /var/extra-addons/partner-contact/requirements.txt \
+    && pip install -r /var/extra-addons/reporting-engine/requirements.txt \
     && pip install -r /var/extra-addons/server-tools/requirements.txt \
     && pip install -r /var/extra-addons/stock-logistics-barcode/requirements.txt \
     && pip install git+https://github.com/aeroo/aeroolib.git \
