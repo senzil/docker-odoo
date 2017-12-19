@@ -25,6 +25,7 @@ RUN mkdir -p /var/extra-addons \
     && git clone -b 9.0 https://github.com/OCA/account-closing /var/extra-addons/OCA/account-closing \
     && git clone -b 9.0 https://github.com/OCA/account-financial-tools /var/extra-addons/OCA/account-financial-tools \
     && git clone -b 9.0 https://github.com/OCA/bank-payment /var/extra-addons/OCA/bank-payment \
+    && git clone -b 9.0 https://github.com/OCA/connector /var/extra-addons/OCA/connector \
     && git clone -b 9.0 https://github.com/OCA/margin-analysis /var/extra-addons/OCA/margin-analysis \
     && git clone -b 9.0 https://github.com/OCA/partner-contact /var/extra-addons/OCA/partner-contact \
     && git clone -b 9.0 https://github.com/OCA/product-attribute /var/extra-addons/OCA/product-attribute \
@@ -48,7 +49,6 @@ RUN mkdir -p /var/extra-addons \
 
 RUN chown -R odoo /var/extra-addons \
     && pip install --upgrade pip setuptools openupgradelib \
-    && pip install -r /var/extra-addons/OCA/account-financial-tools/requirements.txt \
     && pip install -r /var/extra-addons/OCA/partner-contact/requirements.txt \
     && pip install -r /var/extra-addons/OCA/reporting-engine/requirements.txt \
     && pip install -r /var/extra-addons/OCA/server-tools/requirements.txt \
