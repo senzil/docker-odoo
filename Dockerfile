@@ -47,7 +47,7 @@ RUN mkdir -p /var/extra-addons \
     && git clone -b 9.0 https://github.com/ingadhoc/miscellaneous /var/extra-addons/ingadhoc/miscellaneous \
     && git clone -b 8.0 https://github.com/ingadhoc/odoo-addons /var/extra-addons/ingadhoc/odoo-addons \
     && git clone -b 9.0 https://github.com/ingadhoc/odoo-argentina /var/extra-addons/ingadhoc/odoo-argentina \
-    && git clone -b 9.0 https://github.com/ingadhoc/reporting-engine /var/extra-addons/ingadhoc/reporting-engine
+    && git clone -b 9.0 https://github.com/ingadhoc/reporting-engine /var/extra-addons/ingadhoc/reporting-engine \
     && git clone -b 9.0 https://github.com/ingadhoc/stock /var/extra-addons/ingadhoc/stock
 
 
