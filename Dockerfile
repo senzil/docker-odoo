@@ -14,9 +14,7 @@ RUN apt-get update \
     python-m2crypto \
     locales
 
-RUN locale-gen en_US.UTF-8 && update-locale
-RUN locale-gen es_AR.UTF-8 && update-locale
-RUN echo 'LANG="en_US.UTF-8"' > /etc/default/locale
+RUN locale-gen en_US.UTF-8 && update-locale && locale-gen es_AR.UTF-8 && update-locale && echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 ENV LANG es_AR.UTF-8
 ENV LANGUAGE es_AR:es:en_US:en
 ENV LC_ALL es_AR.UTF-8
@@ -47,6 +45,7 @@ RUN mkdir -p /var/extra-addons \
     && git clone -b 9.0 https://github.com/ingadhoc/miscellaneous /var/extra-addons/ingadhoc/miscellaneous \
     && git clone -b 8.0 https://github.com/ingadhoc/odoo-addons /var/extra-addons/ingadhoc/odoo-addons \
     && git clone -b 9.0 https://github.com/ingadhoc/odoo-argentina /var/extra-addons/ingadhoc/odoo-argentina \
+    && git clone -b 9.0 https://github.com/ingadhoc/patches /var/extra-addons/ingadhoc/patches \
     && git clone -b 9.0 https://github.com/ingadhoc/reporting-engine /var/extra-addons/ingadhoc/reporting-engine \
     && git clone -b 9.0 https://github.com/ingadhoc/stock /var/extra-addons/ingadhoc/stock
 
@@ -58,6 +57,7 @@ RUN chown -R odoo /var/extra-addons \
     && pip install -r /var/extra-addons/OCA/server-tools/requirements.txt \
     && pip install -r /var/extra-addons/OCA/stock-logistics-barcode/requirements.txt \
     && pip install -r /var/extra-addons/ingadhoc/odoo-argentina/requirements.txt \
+    && pip install -r /var/extra-addons/ingadhoc/patches/requirements.txt \
     && pip install git+https://github.com/aeroo/aeroolib.git \
     && chown odoo /usr/local/lib/python2.7/dist-packages/pyafipws/
 
