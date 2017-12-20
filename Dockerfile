@@ -5,14 +5,15 @@ USER root
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends\
-    git \
-    python-dev \
     build-essential \
+    git \
+    libcups2-dev \
     libssl-dev \
     libffi-dev \
+    locales \
+    python-dev \
     python-httplib2 \
-    python-m2crypto \
-    locales
+    python-m2crypto
 
 RUN locale-gen en_US.UTF-8 && update-locale && locale-gen es_AR.UTF-8 && update-locale && echo 'LANG="en_US.UTF-8"' > /etc/default/locale
 ENV LANG es_AR.UTF-8
