@@ -39,6 +39,7 @@ RUN mkdir -p /var/extra-addons \
     && git clone -b 9.0 https://github.com/OCA/web /var/extra-addons/OCA/web \
     && git clone -b 9.0 https://github.com/OCA/webkit-tools /var/extra-addons/OCA/webkit-tools \
     && git clone -b 9.0 https://github.com/ingadhoc/account-financial-tools /var/extra-addons/ingadhoc/account-financial-tools \
+    && git clone -b 9.0 https://github.com/ingadhoc/account-invoicing /var/extra-addons/ingadhoc/account-invoicing \
     && git clone -b 9.0 https://github.com/ingadhoc/account-payment /var/extra-addons/ingadhoc/account-payment \
     && git clone -b 9.0 https://github.com/ingadhoc/aeroo_reports /var/extra-addons/ingadhoc/aeroo_reports \
     && git clone -b 9.0 https://github.com/ingadhoc/argentina-reporting /var/extra-addons/ingadhoc/argentina-reporting \
