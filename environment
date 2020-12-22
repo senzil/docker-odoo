@@ -1,0 +1,22 @@
+# comentar o modificar segun corresponda
+SERVER_WIDE_MODULES=base,web,server_mode,saas_client
+
+#####################################
+# PARAMETROS QUE NO SE SUELEN CAMBIAR
+#####################################
+# para no disparar crons en dev set in 0
+MAX_CRON_THREADS=2
+
+WORKERS=0
+LIST_DB=False
+WITHOUT_DEMO=False
+ADMIN_PASSWORD=senzil
+PROXY_MODE=True
+SERVER_MODE=prod
+AEROO_DOCS_HOST=aeroo
+# WORKING_DIR=/
+LIMIT_TIME_REAL_CRON=0
+LIMIT_TIME_REAL=999999999999
+
+# To avoid warning because on postgres this is not available if we don't install postgresql-contrib
+UNACCENT=False

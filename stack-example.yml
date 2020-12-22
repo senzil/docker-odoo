@@ -1,0 +1,76 @@
+version: "3.8"
+volumes:
+  pg_data:
+  odoo_data:
+
+services:
+  db:
+    image: postgres:alpine
+    env_file:
+      - $PWD/db/.env
+    environment:
+        - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+        - pg_data:/var/lib/postgresql/data/pgdata
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: '200mb'
+    restart: always
+
+  aeroo:
+    image: adhoc/aeroo-docs
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: '20mb'
+    restart: always
+
+  odoo:
+    image: senzil/odoo:13.0
+    env_file:
+      - $PWD/odoo/.env
+    volumes:
+      - odoo_data:/home/odoo/data
+    deploy:
+      replicas: 1
+      restart_policy:
+        condition: any
+      resources:
+        limits:
+          memory: '256mb'
+    restart: always
+    depends_on:
+      - aeroo
+      - db
+
+  proxy:
+    image: nginx:alpine
+    volumes:
+      - $PWD/proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+      - $PWD/proxy/certs/domain.crt:/etc/nginx/ssl/domain.com/domain.crt:ro
+      - $PWD/proxy/certs/domain.key:/etc/nginx/ssl/domain.com/domain.key:ro
+      - $PWD/proxy/certs/domain.pem:/etc/nginx/ssl/domain.com/domain.pem:ro
+    ports:
+      - 80:80
+      - 443:443
+    deploy:
+      replicas: 1
+      placement:
+        max_replicas_per_node: 1
+      restart_policy:
+        condition: any
+      resources:
+        limits: 
+          memory: 20M
+    restart: always
+    depends_on:
+      - aeroo
+      - db
+      - odoo

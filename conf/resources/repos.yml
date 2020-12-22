@@ -1,0 +1,197 @@
+## Ingadhoc
+$SOURCES/odoo:
+    remotes:
+        origin: https://github.com/odoo/odoo.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-odoo-argentina:
+    remotes:
+        origin: https://github.com/ingadhoc/odoo-argentina.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-odoo-argentina-ce:
+    remotes:
+        origin: https://github.com/ingadhoc/odoo-argentina-ce.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-argentina-sale:
+    remotes:
+        origin: https://github.com/ingadhoc/argentina-sale.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-miscellaneous:
+  remotes:
+    origin: https://github.com/ingadhoc/miscellaneous.git
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+ingadhoc-account-payment:
+    remotes:
+        origin: https://github.com/ingadhoc/account-payment.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-account-financial-tools:
+    remotes:
+        origin: https://github.com/ingadhoc/account-financial-tools.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-aeroo_reports:
+    remotes:
+        origin: https://github.com/ingadhoc/aeroo_reports.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-account-invoicing:
+    remotes:
+        origin: https://github.com/ingadhoc/account-invoicing.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-partner:
+    remotes:
+        origin: https://github.com/ingadhoc/partner.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-account-analytic:
+    remotes:
+        origin: https://github.com/ingadhoc/account-analytic.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-hr:
+    remotes:
+        origin: https://github.com/ingadhoc/hr.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-product:
+  remotes:
+    origin: https://github.com/ingadhoc/product.git
+  merges:
+    - origin $ODOO_VERSION
+  target: origin $ODOO_VERSION
+
+ingadhoc-multi-company:
+    remotes:
+        origin: https://github.com/ingadhoc/multi-company.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-purchase:
+    remotes:
+        origin: https://github.com/ingadhoc/purchase.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-stock:
+    remotes:
+        origin: https://github.com/ingadhoc/stock.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-website:
+    remotes:
+        origin: https://github.com/ingadhoc/website.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-sale:
+    remotes:
+        origin: https://github.com/ingadhoc/sale.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-project:
+    remotes:
+        origin: https://github.com/ingadhoc/project.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-argentina-reporting:
+    remotes:
+        origin: https://github.com/ingadhoc/argentina-reporting.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-reporting-engine:
+    remotes:
+        origin: https://github.com/ingadhoc/reporting-engine.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-multi-store:
+    remotes:
+        origin: https://github.com/ingadhoc/multi-store.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+ingadhoc-manufacture:
+    remotes:
+        origin: https://github.com/ingadhoc/manufacture.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+oca-web:
+    remotes:
+        origin: https://github.com/oca/web.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+oca-account-financial-tools:
+    remotes:
+        origin: https://github.com/oca/account-financial-tools.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+oca-account-financial-reporting:
+    remotes:
+        origin: https://github.com/oca/account-financial-reporting.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+oca-server-ux:
+    remotes:
+        origin: https://github.com/oca/server-ux.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
+oca-reporting-engine:
+    remotes:
+        origin: https://github.com/oca/reporting-engine.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
+
