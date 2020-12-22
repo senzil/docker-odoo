@@ -18,7 +18,10 @@ docker run -d -p 80:8069 --link db --link aeroo --name odoo senzil/odoo:13
 
 OR 
 
-docker-compose -d -c stack.yml odoo
+docker-compose -f stack.yml -p odoo up
+docker-compose -f stack.yml -p odoo stop
+docker-compose -f stack.yml -p odoo rm
+docker-compose -f stack.yml -p odoo down --remove-orphans -v
 
 # Special Mention
 We want to congrat and to thank to @ingadhoc for its great work
