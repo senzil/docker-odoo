@@ -20,7 +20,7 @@ RUN apt-get update \
     libcups2-dev \
     # pip dependencies that require build deps
     && python -m pip install --upgrade pip \
-    && sudo -H -u odoo pip install --user --no-cache-dir pycups pyOpenSSL M2Crypto httplib2>=0.7 git+https://github.com/pysimplesoap/pysimplesoap@a330d9c4af1b007fe1436f979ff0b9f66613136e \
+    && sudo -H -u odoo pip install --user --no-cache-dir psycopg2-binary pycups pyOpenSSL M2Crypto httplib2>=0.7 git+https://github.com/pysimplesoap/pysimplesoap@a330d9c4af1b007fe1436f979ff0b9f66613136e \
     # purge
     && apt-get purge -yqq build-essential '*-dev' make || true \
     && apt-get -yqq autoremove \
