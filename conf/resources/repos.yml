@@ -195,3 +195,9 @@ oca-reporting-engine:
         - origin $ODOO_VERSION
     target: origin $ODOO_VERSION
 
+oca-social:
+    remotes:
+        origin: https://github.com/OCA/social.git
+    merges:
+        - origin $ODOO_VERSION
+    target: origin $ODOO_VERSION
